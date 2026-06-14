@@ -1,0 +1,11 @@
+# Lakewood Ranch SEO — robots.txt
+User-agent: *
+Allow: /
+
+# Block any future admin or staging directories
+Disallow: /admin/
+Disallow: /staging/
+Disallow: /*.php$
+
+# Sitemap location
+Sitemap: https://www.lakewoodranchseo.com/sitemap.xml
