@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Services — Lakewood Ranch SEO</title>
+<meta name="description" content="Local SEO, technical SEO, content strategy, and link building services for Lakewood Ranch and Sarasota area businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D2240;
+    --navy-mid: #1A3A60;
+    --gold: #C89B3C;
+    --gold-light: #E8C06A;
+    --cream: #F7F4EF;
+    --white: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #5C6B7A;
+    --border: #DDD8CF;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid var(--navy-mid);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .logo-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    flex-shrink: 0;
+    align-self: center;
+    margin-bottom: 3px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    padding: 8px 20px !important;
+    border-radius: var(--radius) !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--navy);
+    padding: 70px 2rem 60px;
+    text-align: center;
+  }
+
+  .page-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .page-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* SERVICES */
+  .section { padding: 80px 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .service-block {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 5rem;
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .service-block:first-child { padding-top: 0; }
+  .service-block:last-child { border-bottom: none; }
+
+  .service-block.reverse {
+    grid-template-columns: 1fr 340px;
+  }
+
+  .service-block.reverse .service-info { order: 1; }
+  .service-block.reverse .service-visual { order: 2; }
+
+  .service-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 4px 10px;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-info h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 2.5vw, 34px);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.2px;
+  }
+
+  .service-info p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .feature-list li {
+    font-size: 15px;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .feature-list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 9px;
+  }
+
+  /* SERVICE VISUAL CARDS */
+  .service-visual {
+    position: sticky;
+    top: 100px;
+  }
+
+  .visual-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+  }
+
+  .visual-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .metric-row:last-child { border-bottom: none; }
+
+  .metric-name { color: var(--muted); }
+
+  .metric-val {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .metric-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: var(--radius);
+    background: #E6F4EA;
+    color: #2E7D32;
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check-icon svg {
+    width: 11px;
+    height: 11px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* PRICING */
+  .pricing-section { background: var(--cream); }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pricing-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .pricing-card.featured {
+    border: 2px solid var(--gold);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .plan-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .plan-price {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .plan-period {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .plan-desc {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.65;
+  }
+
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .plan-features li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--border);
+    padding: 13px 24px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+
+  /* SECTION SHARED */
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.15;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--muted);
+    margin-top: 1rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .cta-band {
+    background: var(--navy);
+    padding: 80px 2rem;
+    text-align: center;
+  }
+
+  .cta-band .section-heading { color: var(--white); margin-bottom: 1rem; }
+  .cta-band p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 2rem; }
+
+  footer {
+    background: var(--navy);
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 768px) {
+    .service-block, .service-block.reverse { grid-template-columns: 1fr; gap: 2rem; }
+    .service-block.reverse .service-info { order: 1; }
+    .service-block.reverse .service-visual { order: 2; }
+    .service-visual { position: static; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">Lakewood Ranch SEO</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Free Audit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">What we offer</p>
+  <h1>SEO services built<br>for local growth</h1>
+  <p>Every service is tailored to the Lakewood Ranch market — not copy-pasted from a national playbook.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- LOCAL SEO -->
+    <div class="service-block" id="local">
+      <div class="service-info">
+        <span class="service-tag">Local SEO</span>
+        <h2>Get found by customers in your backyard</h2>
+        <p>When someone searches "dentist near me" or "HVAC repair Lakewood Ranch," they need to find you — not your competitor. We make that happen through systematic local optimization.</p>
+        <p>From your Google Business Profile to local citations and review strategy, we cover every signal that tells Google you're the right business for your area.</p>
+        <ul class="feature-list">
+          <li>Google Business Profile setup and optimization</li>
+          <li>Google Map Pack rankings for target keywords</li>
+          <li>Local citation building and cleanup</li>
+          <li>Review generation and reputation management</li>
+          <li>Localized landing page creation</li>
+          <li>Competitor gap analysis</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <p class="visual-card-label">Local ranking factors</p>
+          <div class="metric-row">
+            <span class="metric-name">GBP completeness</span>
+            <span class="metric-badge">High impact</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Review count & rating</span>
+            <span class="metric-badge">High impact</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Citation consistency</span>
+            <span class="metric-badge">High impact</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Local backlinks</span>
+            <span class="metric-val">Strong signal</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">On-page local signals</span>
+            <span class="metric-val">Strong signal</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Behavioral signals</span>
+            <span class="metric-val">Growing factor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SEO -->
+    <div class="service-block reverse" id="technical">
+      <div class="service-info">
+        <span class="service-tag">Technical SEO</span>
+        <h2>The foundation your rankings are built on</h2>
+        <p>Even the best content won't rank if Google can't crawl, index, or understand your website. Technical SEO fixes the invisible issues that are quietly costing you traffic.</p>
+        <p>We audit your site from the ground up — site speed, mobile performance, crawl architecture, structured data, and more — then fix what matters most.</p>
+        <ul class="feature-list">
+          <li>Full technical site audit</li>
+          <li>Core Web Vitals optimization</li>
+          <li>Mobile-first performance improvements</li>
+          <li>Structured data and schema markup</li>
+          <li>Crawl budget optimization</li>
+          <li>Canonical and redirect audit</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <p class="visual-card-label">Technical health checks</p>
+          <div class="checklist">
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>Page speed under 2.5s (LCP)</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>Mobile-friendly design</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>Clean crawl structure</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>Schema markup implemented</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>HTTPS and security headers</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>No crawl errors or broken links</span>
+            </div>
+            <div class="check-item">
+              <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+              <span>XML sitemap up to date</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="service-block" id="content">
+      <div class="service-info">
+        <span class="service-tag">Content Strategy</span>
+        <h2>Content that earns rankings and converts</h2>
+        <p>Good content isn't just about word count. It's about matching what your customers are searching for with answers that build trust — and pages that convert that trust into action.</p>
+        <p>We research the keywords your target customers actually use, map them to the right pages, and write or guide the content that earns you consistent organic traffic.</p>
+        <ul class="feature-list">
+          <li>Keyword research and opportunity mapping</li>
+          <li>Service page optimization and rewriting</li>
+          <li>Location-specific landing pages</li>
+          <li>Blog content strategy and writing</li>
+          <li>FAQ content targeting featured snippets</li>
+          <li>Content calendar and ongoing production</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <p class="visual-card-label">Content performance snapshot</p>
+          <div class="metric-row">
+            <span class="metric-name">Avg. time to rank</span>
+            <span class="metric-val">60–90 days</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Keywords tracked</span>
+            <span class="metric-val">50–200+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Featured snippet wins</span>
+            <span class="metric-badge">Target</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Monthly content pieces</span>
+            <span class="metric-val">2–8 pages</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Conversion rate improvement</span>
+            <span class="metric-badge">Tracked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINK BUILDING -->
+    <div class="service-block reverse" id="authority">
+      <div class="service-info">
+        <span class="service-tag">Link Building</span>
+        <h2>Authority that Google respects</h2>
+        <p>Backlinks remain one of the strongest ranking signals. But not all links are equal — and bad links can hurt you. We build the kind of links that actually move rankings: earned, relevant, and durable.</p>
+        <p>We focus on local and industry-relevant sources: Sarasota publications, industry directories, chamber listings, and partner websites — links that make sense for your business.</p>
+        <ul class="feature-list">
+          <li>Local and industry link prospecting</li>
+          <li>Outreach campaigns and relationship building</li>
+          <li>Local directory and chamber submissions</li>
+          <li>PR-driven link acquisition</li>
+          <li>Competitor backlink gap analysis</li>
+          <li>Toxic link monitoring and disavowal</li>
+        </ul>
+      </div>
+      <div class="service-visual">
+        <div class="visual-card">
+          <p class="visual-card-label">Link quality signals</p>
+          <div class="metric-row">
+            <span class="metric-name">Domain relevance</span>
+            <span class="metric-badge">Critical</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Domain authority</span>
+            <span class="metric-badge">High impact</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Anchor text variety</span>
+            <span class="metric-badge">Important</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Local publication links</span>
+            <span class="metric-val">Priority target</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-name">Follow vs. nofollow mix</span>
+            <span class="metric-val">Monitored</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section">
+  <div class="section-inner">
+    <div style="margin-bottom: 0;">
+      <p class="section-eyebrow">Investment</p>
+      <h2 class="section-heading">Simple, transparent pricing</h2>
+      <p class="section-sub">No hidden fees. No surprise invoices. Month-to-month agreements — because we want to earn your business, not trap it.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <p class="plan-name">Essentials</p>
+        <p class="plan-price">$400</p>
+        <p class="plan-period">per month · no contract</p>
+        <p class="plan-desc">For new or small businesses establishing their local search presence.</p>
+        <ul class="plan-features">
+          <li>Google Business Profile optimization</li>
+          <li>Local citation audit and cleanup</li>
+          <li>Keyword research (up to 30 keywords)</li>
+          <li>Monthly performance report</li>
+          <li>On-page optimization for 3 pages</li>
+          <li>Review strategy guidance</li>
+          <li>Technical SEO audit and fixes</li>
+        </ul>
+        <a href="contact.html" class="btn-outline">Get started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most popular</div>
+        <p class="plan-name">Growth</p>
+        <p class="plan-price">$800</p>
+        <p class="plan-period">per month · no contract</p>
+        <p class="plan-desc">For established businesses ready to outrank competitors and grow consistently.</p>
+        <ul class="plan-features">
+          <li>Everything in Essentials</li>
+          <li>Technical SEO audit and fixes</li>
+          <li>2 content pieces per month</li>
+          <li>Local link building (4–6 links/mo)</li>
+          <li>Keyword tracking (up to 100 keywords)</li>
+          <li>Competitor monitoring</li>
+          <li>Bi-weekly strategy calls</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Get started</a>
+      </div>
+      <div class="pricing-card">
+        <p class="plan-name">Authority</p>
+        <p class="plan-price">$1,200</p>
+        <p class="plan-period">per month · no contract</p>
+        <p class="plan-desc">For businesses that want to dominate their category across the Sarasota region.</p>
+        <ul class="plan-features">
+          <li>Everything in Growth</li>
+          <li>4–6 content pieces per month</li>
+          <li>Aggressive link building (8–12/mo)</li>
+          <li>Unlimited keyword tracking</li>
+          <li>Multiple location support</li>
+          <li>Conversion rate optimization</li>
+          <li>Weekly strategy calls</li>
+          <li>Priority response and support</li>
+        </ul>
+        <a href="contact.html" class="btn-outline">Get started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div style="max-width: 580px; margin: 0 auto;">
+    <p class="section-eyebrow" style="color: var(--gold);">Not sure where to start?</p>
+    <h2 class="section-heading">A free audit tells you everything</h2>
+    <p>We'll review your current SEO, benchmark you against local competitors, and tell you which plan — if any — makes sense for your goals.</p>
+    <a href="contact.html" class="btn-primary" style="display: inline-block; width: auto;">Request your free SEO audit</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">Lakewood Ranch SEO</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="mailto:ralphstebenne@lakewoodranchseo.com">ralphstebenne@lakewoodranchseo.com</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Lakewood Ranch SEO. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

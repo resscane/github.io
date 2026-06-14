@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Lakewood Ranch SEO</title>
+<meta name="description" content="Request a free SEO audit or get in touch with Lakewood Ranch SEO. We serve businesses across Lakewood Ranch, Bradenton, and Sarasota.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D2240;
+    --navy-mid: #1A3A60;
+    --gold: #C89B3C;
+    --gold-light: #E8C06A;
+    --cream: #F7F4EF;
+    --white: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #5C6B7A;
+    --border: #DDD8CF;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid var(--navy-mid);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .logo-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    flex-shrink: 0;
+    align-self: center;
+    margin-bottom: 3px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    padding: 8px 20px !important;
+    border-radius: var(--radius) !important;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* SPLIT LAYOUT */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    min-height: calc(100vh - 68px);
+  }
+
+  /* LEFT PANEL */
+  .contact-left {
+    background: var(--navy);
+    padding: 60px 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-left h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .contact-left > p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: auto;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .detail-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .detail-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .detail-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 3px;
+  }
+
+  .detail-value {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .detail-value a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .detail-value a:hover { color: var(--gold-light); }
+
+  .what-to-expect {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .expect-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .expect-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .expect-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .step-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+    min-width: 24px;
+  }
+
+  .step-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+  }
+
+  .step-text strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  /* RIGHT PANEL — FORM */
+  .contact-right {
+    background: var(--cream);
+    padding: 60px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.2px;
+  }
+
+  .form-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.65;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.2px;
+  }
+
+  input, select, textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 11px 14px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+  }
+
+  input::placeholder, textarea::placeholder { color: #B0AAAA; }
+
+  textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235C6B7A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    flex-shrink: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    accent-color: var(--gold);
+  }
+
+  .checkbox-item span {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .submit-btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 15px 28px;
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+    letter-spacing: 0.1px;
+  }
+
+  .submit-btn:hover { background: var(--gold-light); }
+
+  .form-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* SUCCESS STATE */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .success-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .success-state h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .success-state p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 360px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  footer {
+    background: var(--navy);
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-left { padding: 48px 2rem; }
+    .contact-right { padding: 48px 2rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">Lakewood Ranch SEO</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="nav-cta">Free Audit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="contact-layout">
+
+  <!-- LEFT -->
+  <div class="contact-left">
+    <p class="contact-eyebrow">Get in touch</p>
+    <h1>Let's talk about<br>your <em>growth</em></h1>
+    <p>Tell us about your business and what you're trying to achieve. We'll review your current SEO and come back with honest, actionable findings — no sales pressure.</p>
+
+    <div class="contact-details">
+      <div class="contact-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <p class="detail-label">Email</p>
+          <p class="detail-value"><a href="mailto:ralphstebenne@lakewoodranchseo.com">ralphstebenne@lakewoodranchseo.com</a></p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div>
+          <p class="detail-label">Location</p>
+          <p class="detail-value">Serving Lakewood Ranch, Bradenton,<br>Sarasota & surrounding areas</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="detail-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <p class="detail-label">Response time</p>
+          <p class="detail-value">Within 1 business day</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="what-to-expect">
+      <p class="expect-label">What happens next</p>
+      <div class="expect-steps">
+        <div class="expect-step">
+          <span class="step-num">1</span>
+          <div class="step-text">
+            <strong>We review your submission</strong>
+            We'll take a first look at your website and search presence before we talk.
+          </div>
+        </div>
+        <div class="expect-step">
+          <span class="step-num">2</span>
+          <div class="step-text">
+            <strong>Free audit call (30 min)</strong>
+            We walk you through what we found, your biggest opportunities, and what a realistic path forward looks like.
+          </div>
+        </div>
+        <div class="expect-step">
+          <span class="step-num">3</span>
+          <div class="step-text">
+            <strong>No obligation proposal</strong>
+            If it's a fit, we'll send a custom proposal. If not, you walk away with a free audit and honest advice.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="contact-right">
+
+    <div id="form-wrap">
+      <h2 class="form-heading">Request your free SEO audit</h2>
+      <p class="form-sub">Fill out the form below and we'll be in touch within one business day to schedule your audit call.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Ralph" required>
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" name="lname" placeholder="Stebenne" required>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(941) 555-0100">
+          </div>
+          <div class="field full">
+            <label for="website">Website URL</label>
+            <input type="url" id="website" name="website" placeholder="https://yourbusiness.com" required>
+          </div>
+          <div class="field full">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your business name" required>
+          </div>
+          <div class="field full">
+            <label for="industry">Industry / business type</label>
+            <select id="industry" name="industry">
+              <option value="" disabled selected>Select your industry</option>
+              <option>Healthcare / Medical</option>
+              <option>Dental</option>
+              <option>Legal Services</option>
+              <option>Real Estate</option>
+              <option>Home Services (HVAC, Plumbing, etc.)</option>
+              <option>Restaurants / Food &amp; Beverage</option>
+              <option>Retail</option>
+              <option>Financial Services</option>
+              <option>Fitness / Wellness</option>
+              <option>Education</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Services you're interested in</label>
+            <div class="checkbox-group" style="margin-top: 4px;">
+              <label class="checkbox-item"><input type="checkbox" name="service" value="local"><span>Local SEO</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="technical"><span>Technical SEO</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="content"><span>Content Strategy</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="links"><span>Link Building</span></label>
+              <label class="checkbox-item"><input type="checkbox" name="service" value="unsure"><span>Not sure yet</span></label>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="message">Anything else we should know?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your biggest SEO challenge, current rankings, or goals..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Send my audit request →</button>
+        <p class="form-note">No spam. No pressure. Just an honest look at your search presence.</p>
+      </form>
+    </div>
+
+    <div id="success-state" class="success-state">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Request received!</h2>
+      <p>Thank you — we'll review your website and be in touch within one business day to schedule your audit call.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">Lakewood Ranch SEO</span>
+      <span class="logo-dot"></span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="mailto:ralphstebenne@lakewoodranchseo.com">ralphstebenne@lakewoodranchseo.com</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Lakewood Ranch SEO. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('form-wrap').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
